@@ -28,8 +28,7 @@ class _DetailState extends State<Detail> {
   @override
   Widget build(BuildContext context) {
     return ShowCaseWidget(
-      builder: Builder(
-        builder: (context) {
+      builder: (context) {
           myContext = context;
           return Scaffold(
             appBar: AppBar(
@@ -118,7 +117,7 @@ class _DetailState extends State<Detail> {
             ),
           );
         },
-      ),
+      
     );
   }
 }

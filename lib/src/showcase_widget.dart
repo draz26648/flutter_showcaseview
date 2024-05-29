@@ -26,7 +26,7 @@ import '../showcaseview.dart';
 import 'extension.dart';
 
 class ShowCaseWidget extends StatefulWidget {
-  final Widget child;
+  final Function(BuildContext) builder;
 
   /// Triggered when all the showcases are completed.
   final VoidCallback? onFinish;
@@ -85,7 +85,7 @@ class ShowCaseWidget extends StatefulWidget {
   final bool enableShowcase;
 
   const ShowCaseWidget({
-    required this.child,
+    required this.builder,
     this.onFinish,
     this.onStart,
     this.onComplete,
@@ -259,7 +259,7 @@ class ShowCaseWidgetState extends State<ShowCaseWidget> {
   Widget build(BuildContext context) {
     return _InheritedShowCaseView(
       activeWidgetIds: ids?.elementAt(activeWidgetId!),
-      child: widget.child,
+      child: widget.builder(context),
     );
   }
 }
